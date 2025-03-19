@@ -13,6 +13,11 @@
 ./gradlew bootWar
 ```
 
+## Docs
+`
+/swagger-ui/index.html
+`
+
 ## API 명세
 
 ### 1. 책 추가
@@ -29,7 +34,9 @@
 - **Response**:
 ```json5
 {
-  "id": 1
+  "statusCode": 200,
+  "dt": "2025-01-01T00:00:00.000+09:00",
+  "bid": 1
 }
 ```
 
@@ -50,23 +57,32 @@
 ### 2-2. 책 목록 조회
 - **Endpoint**: `GET /api/books`
 - **Request Param**:
-```json5
-{
-  "keyword": "제목",
-  "page": 0,
-  "size": 10,
-  "sortBy": "제목,desc"
-}
-```
 
+|name| type   | value      |
+|---|--------|------------|
+|keyword| String | 책 제목 또는 저자 |
+|page|Integer | 0          |
+|size|Integer | 10         |
+|sort|String | bid,desc   |
+- 
 - **Response**:
 ```json5
 {
-  "bid": 1,
-  "title": "책 제목",
-  "author": "저자",
-  "price": 10000,
-  "cnt": 1
+  "content": [
+    {
+      "bid": 1,
+      "title": "책 제목",
+      "author": "저자",
+      "price": 10000,
+      "cnt": 1
+    }
+  ],
+  "page": {
+    "size": 10,
+    "number": 0,
+    "totalElements": 1,
+    "totalPages": 1
+  }
 }
 ```
 
@@ -78,13 +94,14 @@
   "title": "책 제목",
   "author": "저자",
   "price": 10000,
-  "cnt": 1
+  "cnt": 10
 }
 ```
 - **Response**:
 ```json5
 {
-  "id": 1
+  "statusCode": 200,
+  "dt": "2025-01-01T00:00:00.000+09:00"
 }
 ```
 
@@ -93,6 +110,7 @@
 - **Response**:
 ```json5
 {
-  "id": 1
+  "statusCode": 200,
+  "dt": "2025-01-01T00:00:00.000+09:00"
 }
 ```
