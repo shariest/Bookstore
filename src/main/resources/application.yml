@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  error:
+    include-message: never
+    include-binding-errors: never
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:bookstore_dev
+    driver-class-name: org.h2.Driver
+    username: ryan
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    com.ryan: debug
+
+springdoc:
+  swagger-ui:
+    path: /api-docs
+  api-docs:
+    path: /v3/api-docs
