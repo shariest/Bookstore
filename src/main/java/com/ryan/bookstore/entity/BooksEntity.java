@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,11 +33,13 @@ public class BooksEntity {
     @NotNull
     @Column(name = "title", nullable = false)
     @Schema(description = "책 제목", example = "책 제목")
+    @NotBlank
     private String title;
 
     @NotNull
     @Column(name = "author", nullable = false)
     @Schema(description = "저자", example = "저자")
+    @NotBlank
     private String author;
 
     @NotNull
