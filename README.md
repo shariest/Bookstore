@@ -27,10 +27,18 @@ pnpm run build
 ## Run
 ### Frontend
 ```shell
-pnpm install && pnpm run dev
+pnpm i && pnpm run dev
 ```
 ### Backend
 `run BookstoreApplication.class`
+
+## Build (Docker)
+```shell
+docker buildx build --no-cache -t app .
+docker run -p 8080:8080 app
+```
+http://localhost:8080/
+
 
 ## Docs
 `
