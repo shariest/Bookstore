@@ -9,6 +9,7 @@
 - Java 17
 - Spring Boot 3.4.1
 ### Frontend
+- Node 22.14.0
 - Vue 3.5.13
 - Vuetify 3.7.18
 - Vite 5.4.14
