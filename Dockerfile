@@ -10,7 +10,7 @@ FROM amazoncorretto:17 AS backend-builder
 
 WORKDIR /app
 COPY . .
-RUN ./gradlew build -x test
+RUN chmod +x gradlew && ./gradlew clean build -x test
 
 # 3. 최종 실행 환경 (JDK 런타임만 포함)
 FROM amazoncorretto:17
