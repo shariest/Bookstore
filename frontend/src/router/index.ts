@@ -1,12 +1,17 @@
-/**
- * router/index.ts
- *
- * Automatic routes for `./src/pages/*.vue`
- */
-
 // Composables
 import { createRouter, createWebHistory } from 'vue-router/auto'
-import { routes } from 'vue-router/auto-routes'
+
+import List from '@/components/books/List.vue';
+import Form from '@/components/books/Form.vue';
+import Detail from '@/components/books/Detail.vue';
+
+const routes = [
+  { path: '/', redirect: '/books' },
+  { path: '/books', name: 'List', component: List },
+  { path: '/books/new', name: 'Create', component: Form },
+  { path: '/books/:bid/update', name: 'Update', component: Form, props: true },
+  { path: '/books/:bid', name: 'Detail', component: Detail, props: true },
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
