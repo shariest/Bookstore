@@ -1,13 +1,12 @@
 plugins {
     id 'java'
-    id 'war'
     id 'org.springframework.boot' version '3.4.1'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
 
 group = 'com.ryan.bookstore'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
 
 java {
     toolchain {
@@ -42,13 +41,10 @@ test {
     useJUnitPlatform()
 }
 
-bootWar {
+bootJar {
     archiveBaseName = 'Bookstore'
     archiveVersion = '1.0'
-}
-
-war {
-    enabled = false
+    archiveClassifier = ''
 }
 
 tasks.withType(JavaCompile).configureEach {
