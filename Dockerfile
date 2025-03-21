@@ -17,7 +17,7 @@ COPY . .
 # 프론트엔드 빌드 결과를 백엔드 resources/static 폴더로 이동
 COPY --from=frontend-builder ../src/main/resources/static /app/src/main/resources/static
 
-RUN ./gradlew build -x test
+RUN chmod +x gradlew && ./gradlew build -x test
 
 # Step 3: 최종 실행 (Amazon Corretto 17)
 FROM amazoncorretto:17
