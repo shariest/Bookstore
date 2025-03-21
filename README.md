@@ -5,13 +5,31 @@
 상점 주인이 책을 검색하고, 상세 정보를 보고 편집하며, 각 책의 판매 수량을 확인할 수 있어야 한다.
 
 ## 기술 스택
+### Backend
 - Java 17
 - Spring Boot 3.4.1
+### Frontend
+- Vue 3.5.13
+- Vuetify 3.7.18
+- Vite 5.4.14
 
 ## Build
+### Frontend
+```shell
+pnpm run build
+```
+### Backend
 ```shell
 ./gradlew bootWar
 ```
+
+## Run
+### Frontend
+```shell
+pnpm install && pnpm run dev
+```
+### Backend
+`run BookstoreApplication.class`
 
 ## Docs
 `
