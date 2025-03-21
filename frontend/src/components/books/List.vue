@@ -69,10 +69,10 @@ watch(() => page.currentPage, () => {
 
 const headers = ref([
   { title: 'ID', key: 'bid' },
-  { title: '책 제목', key: 'title' },
+  { title: '제목', key: 'title' },
   { title: '저자', key: 'author' },
   { title: '가격', key: 'price' },
-  { title: '재고', key: 'cnt' },
+  { title: '판매 수량', key: 'cnt' },
 ]);
 
 const loadData = async () => {

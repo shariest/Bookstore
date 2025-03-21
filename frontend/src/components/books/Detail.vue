@@ -46,7 +46,7 @@ const bookInfo = computed(() => ({
   '제목': book?.title,
   '저자': book?.author,
   '가격': book?.price,
-  '수량': book?.cnt
+  '판매 수량': book?.cnt
 }))
 
 const loadData = async () => {

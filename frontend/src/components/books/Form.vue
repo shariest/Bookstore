@@ -40,7 +40,7 @@
             </v-col>
           </v-row>
           <v-row class="">
-            <v-col cols="3" class="text-center font-weight-bold border">재고</v-col>
+            <v-col cols="3" class="text-center font-weight-bold border">판매 수량</v-col>
             <v-col cols="9" class="border">
               <v-text-field v-model="book.cnt"
                             type="number"
@@ -106,13 +106,12 @@ const saveBook = async () => {
     if (confirm(`저장하시겠습니까?`)) {
       if (book.bid) {
         await updateBook(book.bid, book);
-        alert('Book updated successfully!');
       } else {
         const response = await createBook(book);
         book.bid = response.bid;
-        alert('Book created successfully!');
       }
 
+      alert('저장되었습니다.');
       router.replace(`/books/${book.bid}`)
     }
   } catch (error) {
