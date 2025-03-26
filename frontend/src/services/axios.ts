@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: `${location.origin.includes('localhost') ? 'http://localhost:8080' : location.origin}/api`,
   timeout: 10000
 })
 
